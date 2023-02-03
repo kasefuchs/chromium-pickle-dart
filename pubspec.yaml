@@ -1,0 +1,12 @@
+name: chromium_pickle
+description: Port of Chromium Pickle in Dart.
+version: 1.0.0
+
+homepage: https://github.com/Kasefuchs/chromium-pickle-dart
+
+environment:
+  sdk: '>=2.18.0 <3.0.0'
+
+dev_dependencies:
+  lints: ^2.0.0
+  test: ^1.16.0
