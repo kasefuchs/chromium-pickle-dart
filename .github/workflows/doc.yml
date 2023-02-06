@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'src/**/*.dart'
+  workflow_dispatch:
 
 jobs:
   dartdoc:
