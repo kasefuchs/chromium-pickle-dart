@@ -15,7 +15,7 @@ jobs:
       - name: Install dependencies
         run: dart pub get
       - name: Generate documentation
-        run: dart doc
+        run: dart doc -o docs
       - name: Push documentation
         run: |
           git config --local user.email "actions@github.com"
