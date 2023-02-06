@@ -1,6 +1,6 @@
 name: chromium_pickle
-description: Port of Chromium Pickle in Dart.
-version: 1.0.0
+description: This library ports Chromium's Pickle class to Dart.
+version: 1.0.1
 
 homepage: https://github.com/Kasefuchs/chromium-pickle-dart
 

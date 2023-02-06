@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## [1.0.1] - 2023-02-06
 
 ### Added
 
@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Updated comments in source code.
 - `CHANGELOG.md` now uses [`Keep a Changelog`](http://keepachangelog.com/) based format.
 - Updated `README.md`
+- Library description
 
 ### Fixed
 
