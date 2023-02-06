@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Updated comments in source code.
 - `CHANGELOG.md` now uses [`Keep a Changelog`](http://keepachangelog.com/) based format.
+- Updated `README.md`
 
 ### Fixed
 
