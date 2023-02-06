@@ -8,9 +8,16 @@ import 'utils.dart';
 
 /// Class that provides facilities for basic packing and unpacking of binary values.
 class Pickle {
+  /// Data stored in this [Pickle].
   late Uint8List header;
+
+  /// Data length in bytes.
   late int headerSize;
+
+  /// Data capacity after header.
   late int capacityAfterHeader;
+
+  /// Data write offset.
   late int writeOffset;
 
   /// Returns an empty [Pickle] object.

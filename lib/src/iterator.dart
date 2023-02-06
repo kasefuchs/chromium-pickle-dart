@@ -5,10 +5,18 @@ import 'enums/enums.dart';
 import 'pickle.dart';
 import 'utils.dart';
 
+/// Class that used to read data from [Pickle] objects.
 class PickleIterator {
+  /// Data stored in [Pickle] attached to this [PickleIterator].
   late Uint8List payload;
+
+  /// Offset of actual [payload] data.
   late int payloadOffset;
+
+  /// Index where current chunk of data starts.
   late int readIndex;
+
+  /// Index where current chuck of data ends.
   late int endIndex;
 
   /// Creates new [PickleIterator] instance that can be used to read data from [Pickle] objects.
