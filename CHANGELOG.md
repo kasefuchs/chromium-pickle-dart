@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+
+- GitHub `Generate documentation` workflow. (Documentation is now also available on GitHub Pages)
+
 ### Changed
 
 - Updated comments in source code.

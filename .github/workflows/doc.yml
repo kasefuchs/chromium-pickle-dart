@@ -1,0 +1,24 @@
+name: Generate documentation
+
+on:
+  push:
+    paths:
+      - 'src/**/*.dart'
+
+jobs:
+  dartdoc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dart-lang/setup-dart@v1.4
+      - name: Install dependencies
+        run: dart pub get
+      - name: Generate documentation
+        run: dart doc
+      - name: Push documentation
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add .
+          git commit -m "Generate documentation for $GITHUB_SHA" || exit 0
+          git push
