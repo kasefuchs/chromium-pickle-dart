@@ -21,5 +21,5 @@ jobs:
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
           git add .
-          git commit -m "Generate documentation for $GITHUB_SHA" || exit 0
+          git commit -m "📄 Generate documentation for $GITHUB_SHA" || exit 0
           git push
