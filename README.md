@@ -87,6 +87,7 @@ void main() {
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
+- [Original Chromium Pickle](https://chromium.googlesource.com/chromium/src/+/main/base/pickle.cc)
 - [chromium-pickle-js](https://github.com/electron/node-chromium-pickle-js/)
 - [AsarSharp](https://github.com/MWR1/asarsharp)
 - [The Documentation Compendium](https://github.com/Kasefuchs/chromium-pickle-dart)
