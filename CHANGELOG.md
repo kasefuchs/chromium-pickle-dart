@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - The format of `CHANGELOG.md` has changed to match requirements of pub.dev.
 - Library description (again).
+- Renamed `example/pickle.dart` to `example.dart`.
 
 ## 1.0.1
 
