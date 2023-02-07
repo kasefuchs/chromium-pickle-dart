@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Changed
 
 - The format of `CHANGELOG.md` has changed to match requirements of pub.dev.
+- Library description (again).
 
 ## 1.0.1
 
