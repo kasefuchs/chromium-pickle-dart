@@ -2,27 +2,44 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/)
-and this project adheres to [Semantic Versioning](http://semver.org/).
+The format is based on [Keep a Changelog](https://keepachangelog.com/)
+and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [1.0.1] - 2023-02-06
+## Unreleased
+
+**Release date:** `N/A`
+
+### Removed
+
+- GitHub `Generate documentation` workflow.
+- Docs on GitHub Pages.
+
+### Changed
+
+- The format of `CHANGELOG.md` has changed to match requirements of pub.dev.
+
+## 1.0.1
+
+**Release date:** `2023-02-06`
 
 ### Added
 
-- GitHub `Generate documentation` workflow. (Documentation is now also available on GitHub Pages)
+- GitHub `Generate documentation` workflow. (Documentation is now also available on GitHub Pages).
 
 ### Changed
 
 - Updated comments in source code.
-- `CHANGELOG.md` now uses [`Keep a Changelog`](http://keepachangelog.com/) based format.
-- Updated `README.md`
-- Library description
+- `CHANGELOG.md` now uses [`Keep a Changelog`](https://keepachangelog.com/) based format.
+- Updated `README.md`.
+- Library description.
 
 ### Fixed
 
 - GitHub `Test` workflow.
 
-## [1.0.0] - 2023-02-03
+## 1.0.0
+
+**Release date:** `2023-02-03`
 
 ### Added
 
