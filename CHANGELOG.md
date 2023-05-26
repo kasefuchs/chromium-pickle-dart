@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## Unreleased
+
+**Release date:** `N/A`
+
+### Removed
+
+- Dart SDK `<3.0.0` requirement.
+
 ## 1.0.2
 
 **Release date:** `2023-02-07`

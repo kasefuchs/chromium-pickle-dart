@@ -44,7 +44,7 @@
 This library doesn't have many requirements, so here's what you need:
 
 ```
-Dart SDK >=2.18.0 <3.0.0
+Dart SDK >=2.18.0
 ```
 
 ### Installing
