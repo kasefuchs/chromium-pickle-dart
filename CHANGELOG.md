@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 **Release date:** `N/A`
 
+
+### Added
+
+- `pubspec.yaml` now contains more information.
+
 ### Removed
 
 - Dart SDK `<3.0.0` requirement.
