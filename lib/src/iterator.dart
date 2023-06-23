@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'enums/enums.dart';
+import 'enums/size.dart';
 import 'pickle.dart';
 import 'utils.dart';
 

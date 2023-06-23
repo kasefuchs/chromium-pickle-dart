@@ -2,7 +2,8 @@ import 'dart:convert';
 import 'dart:math';
 import 'dart:typed_data';
 
-import 'enums/enums.dart';
+import 'enums/constants.dart';
+import 'enums/size.dart';
 import 'iterator.dart';
 import 'utils.dart';
 

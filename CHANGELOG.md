@@ -18,6 +18,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Deprecated `PickleIterator.payload`, `PickleIterator.payloadOffset`, `PickleIterator.endIndex`
   and `Pickle.getPayloadSize()`
 
+### Removed
+
+- Removed `lib/src/enums/enums.dart`
+
 ## 1.0.3
 
 **Release date:** `2023-05-26`
