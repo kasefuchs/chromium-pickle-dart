@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## Unreleased
+
+**Release date:** `N/A`
+
+### Fixed
+
+- Fixed bug with buffer linking in `PickleIterator` (now iterators refer to the pickle itself, not buffer)
+
+### Deprecated
+
+- Deprecated `PickleIterator.payload`, `PickleIterator.payloadOffset`, `PickleIterator.endIndex`
+  and `Pickle.getPayloadSize()`
+
 ## 1.0.3
 
 **Release date:** `2023-05-26`

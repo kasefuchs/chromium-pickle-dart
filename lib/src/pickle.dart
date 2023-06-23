@@ -34,7 +34,7 @@ class Pickle {
   /// Returns a [Pickle] object that initialized from a [Uint8List].
   Pickle.fromUint8List(Uint8List buffer) {
     header = buffer;
-    headerSize = buffer.length - getPayloadSize();
+    headerSize = buffer.length - payloadSize;
     capacityAfterHeader = PickleConstants.capacityReadOnly.value;
     writeOffset = 0;
 
@@ -53,17 +53,21 @@ class Pickle {
 
   /// Returns a [Uint8List] that contains this [Pickle] object data.
   Uint8List toUint8List() {
-    return header.sublist(0, headerSize + getPayloadSize());
+    return header.sublist(0, headerSize + payloadSize);
   }
 
   /// Returns a [int] that contains this [Pickle] object payload size.
-  int getPayloadSize() {
-    return ByteData.view(header.buffer).getUint32(0, Endian.little);
-  }
+  int get payloadSize => headerView.getUint32(0, Endian.little);
+
+  ByteData get headerView => ByteData.view(header.buffer);
+
+  /// Returns a [int] that contains this [Pickle] object payload size.
+  @Deprecated("Use payloadSize getter instead")
+  int getPayloadSize() => payloadSize;
 
   /// Sets this [Pickle] object payload size.
   void setPayloadSize(int size) {
-    ByteData.view(header.buffer).setUint32(0, size, Endian.little);
+    headerView.setUint32(0, size, Endian.little);
   }
 
   /// Writes `bytes` to [Pickle] object. Returns `true` when succeeded and returns `false` when failed.
