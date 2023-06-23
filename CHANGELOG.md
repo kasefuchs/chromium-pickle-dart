@@ -22,6 +22,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - Removed `lib/src/enums/enums.dart`
 
+### Changed
+
+- Reformatted code
+
 ## 1.0.3
 
 **Release date:** `2023-05-26`

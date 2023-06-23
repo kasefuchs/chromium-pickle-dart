@@ -48,9 +48,7 @@ class Pickle {
   }
 
   /// Returns a [PickleIterator] that can be used to read data from this [Pickle] object.
-  PickleIterator createIterator() {
-    return PickleIterator(this);
-  }
+  PickleIterator createIterator() => PickleIterator(this);
 
   /// Returns a [Uint8List] that contains this [Pickle] object data.
   Uint8List toUint8List() {
@@ -97,9 +95,7 @@ class Pickle {
   }
 
   /// Writes [value] to [Pickle] object as `bool`. Returns `true` when succeeded and returns `false` when failed.
-  bool writeBool(bool value) {
-    return writeInt(value ? 1 : 0);
-  }
+  bool writeBool(bool value) => writeInt(value ? 1 : 0);
 
   /// Writes [value] to [Pickle] object as `string`. Returns `true` when succeeded and returns `false` when failed.
   bool writeString(String value) {
@@ -112,58 +108,70 @@ class Pickle {
   }
 
   /// Writes [value] to [Pickle] object as `int32`. Returns `true` when succeeded and returns `false` when failed.
-  bool writeInt(int value) {
-    return writeBytes(
+  bool writeInt(int value) => writeBytes(
         value,
         PickleSize.int32.value,
-        (writeHeaderOffset) => ByteData.view(header.buffer)
-            .setInt32(writeHeaderOffset, value, Endian.little));
-  }
+        (writeHeaderOffset) => headerView.setInt32(
+          writeHeaderOffset,
+          value,
+          Endian.little,
+        ),
+      );
 
   /// Writes [value] to [Pickle] object as `uint32`. Returns `true` when succeeded and returns `false` when failed.
-  bool writeUInt32(int value) {
-    return writeBytes(
+  bool writeUInt32(int value) => writeBytes(
         value,
         PickleSize.uint32.value,
-        (writeHeaderOffset) => ByteData.view(header.buffer)
-            .setUint32(writeHeaderOffset, value, Endian.little));
-  }
+        (writeHeaderOffset) => headerView.setUint32(
+          writeHeaderOffset,
+          value,
+          Endian.little,
+        ),
+      );
 
   /// Writes [value] to [Pickle] object as `int64`. Returns `true` when succeeded and returns `false` when failed.
-  bool writeInt64(int value) {
-    return writeBytes(
+  bool writeInt64(int value) => writeBytes(
         value,
         PickleSize.int64.value,
-        (writeHeaderOffset) => ByteData.view(header.buffer)
-            .setInt64(writeHeaderOffset, value, Endian.little));
-  }
+        (writeHeaderOffset) => headerView.setInt64(
+          writeHeaderOffset,
+          value,
+          Endian.little,
+        ),
+      );
 
   /// Writes [value] to [Pickle] object as `uint64`. Returns `true` when succeeded and returns `false` when failed.
-  bool writeUInt64(int value) {
-    return writeBytes(
+  bool writeUInt64(int value) => writeBytes(
         value,
         PickleSize.uint64.value,
-        (writeHeaderOffset) => ByteData.view(header.buffer)
-            .setUint64(writeHeaderOffset, value, Endian.little));
-  }
+        (writeHeaderOffset) => headerView.setUint64(
+          writeHeaderOffset,
+          value,
+          Endian.little,
+        ),
+      );
 
   /// Writes [value] to [Pickle] object as `float`. Returns `true` when succeeded and returns `false` when failed.
-  bool writeFloat(double value) {
-    return writeBytes(
+  bool writeFloat(double value) => writeBytes(
         value,
         PickleSize.float.value,
-        (writeHeaderOffset) => ByteData.view(header.buffer)
-            .setFloat32(writeHeaderOffset, value, Endian.little));
-  }
+        (writeHeaderOffset) => headerView.setFloat32(
+          writeHeaderOffset,
+          value,
+          Endian.little,
+        ),
+      );
 
   /// Writes [value] to [Pickle] object as `double`. Returns `true` when succeeded and returns `false` when failed.
-  bool writeDouble(double value) {
-    return writeBytes(
+  bool writeDouble(double value) => writeBytes(
         value,
         PickleSize.double.value,
-        (writeHeaderOffset) => ByteData.view(header.buffer)
-            .setFloat64(writeHeaderOffset, value, Endian.little));
-  }
+        (writeHeaderOffset) => headerView.setFloat64(
+          writeHeaderOffset,
+          value,
+          Endian.little,
+        ),
+      );
 
   /// Resizes this [Pickle] object header capacity.
   void resize(int capacity) {

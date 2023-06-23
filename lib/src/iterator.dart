@@ -22,7 +22,6 @@ class PickleIterator {
   @Deprecated("Use Pickle.payloadSize instead")
   int get endIndex => pickle.payloadSize;
 
-
   /// [Pickle] attached to this [PickleIterator].
   Pickle pickle;
 
@@ -30,70 +29,78 @@ class PickleIterator {
   PickleIterator(this.pickle);
 
   /// Returns the `bytes` value of the [Pickle] object at the specified buffer [length].
-  dynamic readBytes<ReturnType>(int length,
-      [ReturnType Function(int)? method]) {
+  dynamic readBytes<ReturnType>(
+    int length, [
+    ReturnType Function(int)? method,
+  ]) {
     int readPayloadOffset = getReadPayloadOffsetAndAdvance(length);
     if (method != null) return method(readPayloadOffset);
     return pickle.header.sublist(readPayloadOffset, readPayloadOffset + length);
   }
 
   /// Returns current [Pickle] object value as `int32` and seeks to next data. A [RangeError] exception would be thrown when failed.
-  int readInt() {
-    return readBytes<int>(
+  int readInt() => readBytes<int>(
         PickleSize.int32.value,
-        (readPayloadOffset) => pickle.headerView
-            .getInt32(readPayloadOffset, Endian.little));
-  }
+        (readPayloadOffset) => pickle.headerView.getInt32(
+          readPayloadOffset,
+          Endian.little,
+        ),
+      );
 
   /// Returns current [Pickle] object value as `uint32` and seeks to next data. A [RangeError] exception would be thrown when failed.
-  int readUInt32() {
-    return readBytes<int>(
+  int readUInt32() => readBytes<int>(
         PickleSize.uint32.value,
-        (readPayloadOffset) => pickle.headerView
-            .getUint32(readPayloadOffset, Endian.little));
-  }
+        (readPayloadOffset) => pickle.headerView.getUint32(
+          readPayloadOffset,
+          Endian.little,
+        ),
+      );
 
   /// Returns current [Pickle] object value as `int64` and seeks to next data. A [RangeError] exception would be thrown when failed.
-  int readInt64() {
-    return readBytes<int>(
+  int readInt64() => readBytes<int>(
         PickleSize.int64.value,
-        (readPayloadOffset) => pickle.headerView
-            .getInt64(readPayloadOffset, Endian.little));
-  }
+        (readPayloadOffset) => pickle.headerView.getInt64(
+          readPayloadOffset,
+          Endian.little,
+        ),
+      );
 
   /// Returns current [Pickle] object value as `uint64` and seeks to next data. A [RangeError] exception would be thrown when failed.
-  int readUInt64() {
-    return readBytes<int>(
+  int readUInt64() => readBytes<int>(
         PickleSize.uint64.value,
-        (readPayloadOffset) => pickle.headerView
-            .getUint64(readPayloadOffset, Endian.little));
-  }
+        (readPayloadOffset) => pickle.headerView.getUint64(
+          readPayloadOffset,
+          Endian.little,
+        ),
+      );
 
   /// Returns current [Pickle] object value as `float` and seeks to next data. A [RangeError] exception would be thrown when failed.
-  double readFloat() {
-    return readBytes<double>(
+  double readFloat() => readBytes<double>(
         PickleSize.float.value,
-        (readPayloadOffset) => pickle.headerView
-            .getFloat32(readPayloadOffset, Endian.little));
-  }
+        (readPayloadOffset) => pickle.headerView.getFloat32(
+          readPayloadOffset,
+          Endian.little,
+        ),
+      );
 
   /// Returns current [Pickle] object value as `double` and seeks to next data. A [RangeError] exception would be thrown when failed.
-  double readDouble() {
-    return readBytes<double>(
+  double readDouble() => readBytes<double>(
         PickleSize.double.value,
-        (readPayloadOffset) => pickle.headerView
-            .getFloat64(readPayloadOffset, Endian.little));
-  }
+        (readPayloadOffset) => pickle.headerView.getFloat64(
+          readPayloadOffset,
+          Endian.little,
+        ),
+      );
 
   /// Returns current [Pickle] object value as `bool` and seeks to next data. A [RangeError] exception would be thrown when failed.
-  bool readBool() {
-    return readInt() != 0;
-  }
+  bool readBool() => readInt() != 0;
 
   /// Returns current [Pickle] object value as `string` and seeks to next data. A [RangeError] exception would be thrown when failed.
-  String readString() {
-    return utf8.decode(readBytes(readInt()));
-  }
+  String readString() => utf8.decode(
+        readBytes(
+          readInt(),
+        ),
+      );
 
   /// Gets read payload offset and seeks for next data in current [Pickle] object.
   int getReadPayloadOffsetAndAdvance(int length) {
