@@ -32,7 +32,7 @@ void main() {
       Pickle pickle = Pickle.empty();
       PickleIterator iterator = pickle.createIterator();
 
-      expect(iterator.payload, pickle.header);
+      expect(iterator.pickle.header, pickle.header);
     });
   });
 }
