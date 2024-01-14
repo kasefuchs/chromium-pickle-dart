@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'dart:typed_data';
 
 import 'package:chromium_pickle/chromium_pickle.dart';
 import 'package:test/test.dart';
@@ -50,6 +51,20 @@ void main() {
       PickleIterator iterator = pickle.createIterator();
 
       expect(iterator.readString(), expected);
+    });
+
+    test('should write buffer to Pickle', () {
+      Random random = Random();
+      int size = 32;
+
+      Uint8List expected = Uint8List.fromList(
+        List.generate(size, (index) => random.nextInt(256)),
+      );
+
+      Pickle pickle = Pickle.empty()..writeBytes(expected, size);
+      PickleIterator iterator = pickle.createIterator();
+
+      expect(iterator.readBytes(size), expected);
     });
   });
 }
