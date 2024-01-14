@@ -1,5 +1,5 @@
 name: chromium_pickle
-version: 1.0.4
+version: 1.1.0
 description: This library ports Chromium's Pickle class to Dart and provides facilities for basic binary value packing and unpacking.
 homepage: https://github.com/kasefuchs/chromium-pickle-dart#readme
 repository: https://github.com/kasefuchs/chromium-pickle-dart
