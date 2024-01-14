@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 **Release date:** `N/A`
 
+### Added
+
+- Methods to get only used data.
+
 ### Changed
 
 - Separate `PickleIterator.readBytes` to `PickleIterator.readBytes` & `PickleIterator.readAs`.

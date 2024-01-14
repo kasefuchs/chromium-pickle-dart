@@ -58,7 +58,14 @@ class Pickle {
   /// Returns a [int] that contains this [Pickle] object payload size.
   int get payloadSize => headerView.getUint32(0, Endian.little);
 
+  /// View of header.
   ByteData get headerView => ByteData.view(header.buffer);
+
+  /// Header without unused data.
+  Uint8List get usedHeader => header.sublist(0, headerSize + payloadSize);
+
+  /// Payload without unused data.
+  Uint8List get usedPayload => usedHeader.sublist(headerSize);
 
   /// Returns a [int] that contains this [Pickle] object payload size.
   @Deprecated("Use payloadSize getter instead")
