@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## Unreleased
+
+**Release date:** `N/A`
+
+### Fixed
+
+- Fixed bug with empty pickle header allocation. (IDK why every other implementation uses 0 instead of 4, like in original chromium pickle)
+
 ## 1.1.0
 
 **Release date:** `2024-01-14`

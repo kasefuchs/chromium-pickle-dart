@@ -6,7 +6,7 @@ import 'package:test/test.dart';
 void main() {
   group('Pickle', () {
     test('should create empty Pickle instance', () {
-      Uint8List expected = Uint8List(64);
+      Uint8List expected = Uint8List(68);
       Pickle pickle = Pickle.empty();
 
       expect(pickle.header, equals(expected));

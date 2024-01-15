@@ -23,8 +23,8 @@ class Pickle {
 
   /// Returns an empty [Pickle] object.
   Pickle.empty() {
-    header = Uint8List(0);
     headerSize = PickleSize.uint32.value;
+    header = Uint8List(headerSize);
     capacityAfterHeader = 0;
     writeOffset = 0;
 
